@@ -1,5 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:sw_list_escribo/HomePage.dart';
+import 'package:sw_list_escribo/screens/HomePage.dart';
 
 main() {
   runApp(SWList());
