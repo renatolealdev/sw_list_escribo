@@ -7,11 +7,26 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final availableHeight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
     return Scaffold(
-      body: Center(
-        child: SizedBox(
-          child: Text("Olá mundo!"),
-        ),
+      backgroundColor: Colors.grey[900],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            height: availableHeight * 0.10,
+            color: Colors.deepPurple[200],
+          ),
+          Container(
+            height: availableHeight * 0.10,
+            color: Colors.deepPurple[400],
+          ),
+          Container(
+            height: availableHeight * 0.80,
+            color: Colors.deepPurple[600],
+          ),
+        ],
       ),
     );
   }
