@@ -9,6 +9,21 @@ part of 'sw_list.store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$SWListStore on _SWListStore, Store {
+  final _$currentPageViewAtom = Atom(name: '_SWListStore.currentPageView');
+
+  @override
+  int get currentPageView {
+    _$currentPageViewAtom.reportRead();
+    return super.currentPageView;
+  }
+
+  @override
+  set currentPageView(int value) {
+    _$currentPageViewAtom.reportWrite(value, super.currentPageView, () {
+      super.currentPageView = value;
+    });
+  }
+
   final _$filmesColorTabAtom = Atom(name: '_SWListStore.filmesColorTab');
 
   @override
@@ -93,6 +108,7 @@ mixin _$SWListStore on _SWListStore, Store {
   @override
   String toString() {
     return '''
+currentPageView: ${currentPageView},
 filmesColorTab: ${filmesColorTab},
 personagensColorTab: ${personagensColorTab},
 favoritosColorTab: ${favoritosColorTab}

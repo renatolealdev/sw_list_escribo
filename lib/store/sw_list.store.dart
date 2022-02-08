@@ -6,6 +6,9 @@ class SWListStore = _SWListStore with _$SWListStore;
 
 abstract class _SWListStore with Store {
   @observable
+  int currentPageView = 0;
+
+  @observable
   bool filmesColorTab = true;
 
   @observable
