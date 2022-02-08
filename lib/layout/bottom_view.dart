@@ -12,7 +12,7 @@ class BottomView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/favoritos",
+      initialRoute: "/",
       routes: {
         "/": (context) => FilmesSubPage(),
         "/personagens": (context) => PersonagensSubPages(),

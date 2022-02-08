@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:sw_list_escribo/page/home_page.dart';
+import 'package:sw_list_escribo/store/sw_list.store.dart';
 
 main() => runApp(SWList());
 
@@ -14,10 +16,17 @@ class SWList extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "SW List for Escribo",
-      home: HomePage(),
+    return MultiProvider(
+      providers: [
+        Provider<SWListStore>(
+          create: (_) => SWListStore(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "SW List for Escribo",
+        home: HomePage(),
+      ),
     );
   }
 }

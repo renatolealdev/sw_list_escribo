@@ -5,17 +5,21 @@ import 'package:flutter/material.dart';
 class Tabs extends StatelessWidget {
   final String text;
   final IconData iconName;
+  final Color color;
+
   const Tabs({
     Key? key,
     required this.text,
     required this.iconName,
+    required this.color,
+
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFF2B2B2B),
+        color: color,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(15),
           topRight: Radius.circular(15),
