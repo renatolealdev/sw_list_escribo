@@ -5,6 +5,13 @@ class FilmesSubPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(
+        color: Colors.blueGrey[800],
+        child: Center(
+          child: Text("Filmes"),
+        ),
+      ),
+    );
   }
 }

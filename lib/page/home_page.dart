@@ -13,13 +13,12 @@ class HomePage extends StatelessWidget {
     final availableHeight =
         MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
     return Scaffold(
-      backgroundColor: Colors.blue,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
             height: availableHeight * 0.10,
-            color: Colors.deepPurple[700],
+            color: Colors.deepPurple[600],
             child: TopView(),
           ),
           Container(
@@ -29,7 +28,7 @@ class HomePage extends StatelessWidget {
           ),
           Container(
             height: availableHeight * 0.82,
-            color: Colors.deepPurple[500],
+            color: Colors.deepPurple[900],
             child: BottomView(),
           ),
         ],

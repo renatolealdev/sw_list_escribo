@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:sw_list_escribo/screens/home_page.dart';
+import 'package:sw_list_escribo/page/home_page.dart';
 
 class SiteOficial extends HomePage {
   final String text = "Site Oficial";
