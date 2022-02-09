@@ -70,6 +70,23 @@ mixin _$SWListStore on _SWListStore, Store {
     });
   }
 
+  final _$siteOficialColorButtomAtom =
+      Atom(name: '_SWListStore.siteOficialColorButtom');
+
+  @override
+  bool get siteOficialColorButtom {
+    _$siteOficialColorButtomAtom.reportRead();
+    return super.siteOficialColorButtom;
+  }
+
+  @override
+  set siteOficialColorButtom(bool value) {
+    _$siteOficialColorButtomAtom
+        .reportWrite(value, super.siteOficialColorButtom, () {
+      super.siteOficialColorButtom = value;
+    });
+  }
+
   final _$_SWListStoreActionController = ActionController(name: '_SWListStore');
 
   @override
@@ -106,12 +123,24 @@ mixin _$SWListStore on _SWListStore, Store {
   }
 
   @override
+  dynamic siteOficialForTrue() {
+    final _$actionInfo = _$_SWListStoreActionController.startAction(
+        name: '_SWListStore.siteOficialForTrue');
+    try {
+      return super.siteOficialForTrue();
+    } finally {
+      _$_SWListStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 currentPageView: ${currentPageView},
 filmesColorTab: ${filmesColorTab},
 personagensColorTab: ${personagensColorTab},
-favoritosColorTab: ${favoritosColorTab}
+favoritosColorTab: ${favoritosColorTab},
+siteOficialColorButtom: ${siteOficialColorButtom}
     ''';
   }
 }

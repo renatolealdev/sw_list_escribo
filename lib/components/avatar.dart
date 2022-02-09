@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttermoji/fluttermoji.dart';
 
 class Avatar extends StatelessWidget {
   const Avatar({Key? key}) : super(key: key);
@@ -6,11 +7,9 @@ class Avatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FittedBox(
-      child: Center(
-        child: Icon(
-          Icons.account_circle_rounded,
-          color: Color(0xFF000000),
-        ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Icon(Icons.contacts_rounded,),
       ),
     );
   }
