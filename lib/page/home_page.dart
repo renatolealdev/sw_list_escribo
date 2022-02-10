@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, file_names, prefer_const_literals_to_create_immutables, unnecessary_new
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
@@ -10,9 +12,11 @@ import 'package:sw_list_escribo/page/sub_pages/filmes.dart';
 import 'package:sw_list_escribo/page/sub_pages/in_app_browser.dart';
 import 'package:sw_list_escribo/page/sub_pages/personagens.dart';
 import 'package:sw_list_escribo/store/sw_list.store.dart';
+import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -33,14 +37,20 @@ class _HomePageState extends State<HomePage> {
     const String text = "Site Oficial";
     final store = Provider.of<SWListStore>(context);
 
+    // Future<void> loadFilmes() async {
+    //   final response = await http.get(Uri.parse('$baseUrl/films/'));
+    //   print(jsonDecode(response.body));
+    // }
+
     setPaginaAtual(pagina) {
       setState(() {
         store.currentPageView = pagina;
       });
     }
 
-    final availableHeight =
-        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    final availableHeight = (MediaQuery.of(context).size.height) -
+        (MediaQuery.of(context).padding.top);
+
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 190, 216, 255),
       body: Column(
@@ -70,7 +80,6 @@ class _HomePageState extends State<HomePage> {
                             pagesController.animateToPage(3,
                                 duration: Duration(milliseconds: 200),
                                 curve: Curves.easeIn);
-                                
                           },
                           child: Center(
                             child: Text(
