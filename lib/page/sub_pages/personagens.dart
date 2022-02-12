@@ -16,7 +16,7 @@ class _PersonagensSubPagesState extends State<PersonagensSubPages> {
   var completeList = [];
   List personList = [];
 
-  Future<void> loadFilmes() async {
+  Future<void> loadPeople() async {
     final response = await http.get(Uri.parse('${baseUrl}people/'));
     Map<String, dynamic> data = jsonDecode(response.body);
     completeList = data['results'];
@@ -30,52 +30,11 @@ class _PersonagensSubPagesState extends State<PersonagensSubPages> {
   @override
   void initState() {
     super.initState();
-    loadFilmes();
+    loadPeople();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.blueGrey[800],
-        child: Center(
-          child: ListView.builder(
-            itemCount: personList.length,
-            itemBuilder: (context, index) {
-              return Center(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 10,
-                    ),
-                    child: Container(
-                      width: double.infinity,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 200, 200, 200),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 8,
-                          horizontal: 30,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(personList[index]),
-                            Icon(Icons.favorite_border),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
-        ),
-      ),
-    );
+    return 
   }
 }
